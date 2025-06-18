@@ -1,11 +1,12 @@
 import "./index.css";
-import Header from "./pages/Header";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Skills from "./pages/Skills";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
-import Footer from "./pages/Footer";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import ContactEmailJs from "./components/Contact.EmailJs";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
