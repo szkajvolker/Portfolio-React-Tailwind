@@ -44,6 +44,7 @@ function App() {
           <Contact />
         </section>
       </div>
+
       <div id="footer">
         <Footer />
       </div>

@@ -1,8 +1,8 @@
 function Footer() {
   return (
     <footer className="py-4 bg-transparent backdrop-blur-md text-azure border-t-4 border-cyan-300 mx-8">
-      <div className="flex flex-col md:flex-row justify-between items-center max-w-[1000px] mx-auto px-4 gap-2">
-        <div className="text-left text-sm">
+      <div className="flex flex-col md:flex-row justify-between items-center max-w-[1000px] mx-auto px-4 gap-5">
+        <div className="flex flex-col text-left text-md gap-2">
           <small>
             BackgroundPicture:{" "}
             <a
@@ -12,7 +12,18 @@ function Footer() {
               rel="noopener noreferrer"
             >
               Image by rawpixel.com on Freepik
-            </a>{" "}
+            </a>
+          </small>
+          <small>
+            <a
+              href="https://www.flaticon.com/free-icons/email"
+              title="email icons"
+              className="text-md font-bold underline hover:text-cyan-300 transition-colors text-[#99ccff]"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Email icons created by Freepik - Flaticon
+            </a>
           </small>
         </div>
         <div className="text-center font-bold md:text-right flex-1 text-sm text-[#99ccff]">
