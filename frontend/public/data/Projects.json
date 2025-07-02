@@ -3,18 +3,21 @@
     "id": 1,
     "title": "Weather App",
     "description": "React + based on Weather API app",
-    "repo": ""
+    "repo": "",
+    "status": false
   },
   {
     "id": 2,
     "title": "PC Webshop",
     "description": "Basic webshop app",
-    "repo": ""
+    "repo": "",
+    "status": false
   },
   {
     "id": 3,
     "title": "UI halftime exam",
-    "description": "Basic Feedback Form,not fully finished",
-    "repo": "https://szkajvolker.github.io/halftime-exam-uibuild/"
+    "description": "Basic Feedback Form",
+    "repo": "https://szkajvolker.github.io/halftime-exam-uibuild/",
+    "status": true
   }
 ]

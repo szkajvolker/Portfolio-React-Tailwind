@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import profilePic from "../assets/images/profilePic.png";
+import profile2 from "../assets/images/profile2.jpg";
 
 function About() {
   const [animate, setAnimate] = useState(false);
@@ -23,7 +23,7 @@ function About() {
     <div className="flex flex-row items-center justify-between  w-full h-auto mx-auto mt-10 mb-30 gap-30">
       <img
         ref={imgRef}
-        src={profilePic}
+        src={profile2}
         alt="profilepic"
         className={`w-[80vw] max-w-[300px] h-auto self-start object-cover rounded-[10px_0_10px_0] flex-shrink-0 ${
           animate ? "slide-in-left" : "opacity-0"

@@ -17,11 +17,11 @@ function Skills() {
       <div className="bg-black/30 rounded-xl p-10 min-w-[220px] flex-1 backdrop-blur-md">
         <h2 className="text-[#99ccff] mb-4 text-2xl text-center">Soft skills</h2>
         <ul className="list-none p-0">
-          <li className="mb-2  text-[#99ccff] text-[1.1rem]">Csapatmunka</li>
-          <li className="mb-2  text-[#99ccff] text-[1.1rem]">Clean code szemlélet</li>
-          <li className="mb-2  text-[#99ccff] text-[1.1rem]">Probléma megoldás</li>
-          <li className="mb-2  text-[#99ccff] text-[1.1rem]">Önálló tanulás</li>
-          <li className="mb-2  text-[#99ccff] text-[1.1rem]">alap responsziv tervezés</li>
+          <li className="mb-2  text-[#99ccff] text-[1.1rem]">Teamwork</li>
+          <li className="mb-2  text-[#99ccff] text-[1.1rem]">Clean Code</li>
+          <li className="mb-2  text-[#99ccff] text-[1.1rem]">Problem Solving</li>
+          <li className="mb-2  text-[#99ccff] text-[1.1rem]">Self-Learning</li>
+          <li className="mb-2  text-[#99ccff] text-[1.1rem]">Basic Responsive Design</li>
         </ul>
       </div>
     </div>

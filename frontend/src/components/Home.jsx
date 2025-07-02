@@ -1,4 +1,3 @@
-// Egyszerű kezdőlap komponens
 import { useEffect, useState } from "react";
 
 function Home() {
@@ -37,8 +36,17 @@ function Home() {
         Junior Frontend Developer
       </p>
       {showIndicator && (
-        <div className="fixed right-6 bottom-20 flex justify-end items-end h-20 mt-auto animate-bounce text-5xl text-[#99ccff] opacity-80">
-          <span className="material-symbols-outlined">keyboard_double_arrow_down</span>
+        <div className="fixed right-6 bottom-20 flex justify-end items-end h-20 mt-auto animate-bounce">
+          <span
+            className="material-symbols-outlined text-[#01ffff] opacity-80 animate-pulse"
+            style={{
+              fontSize: "100px",
+              fontVariationSettings: '"FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48',
+              textShadow: "0 0 10px #99ccff, 0 0 20px #99ccff,0 0 30px #99ccff,0 0 40px #99ccff",
+            }}
+          >
+            keyboard_double_arrow_down
+          </span>
         </div>
       )}
     </div>
