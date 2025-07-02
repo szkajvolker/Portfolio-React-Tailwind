@@ -6,8 +6,8 @@ function Projects() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("/data/Projects.json");
-        const data = res.json();
+        const res = await fetch("dist/data/Projects.json");
+        const data = await res.json();
         setProjects(data || []);
       } catch (error) {
         console.error(error);
