@@ -1,22 +1,6 @@
-import { useEffect, useState } from "react";
+import projects from "../data/projects.json";
 
 function Projects() {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("/data/Projects.json");
-        const data = await res.json();
-        setProjects(data || []);
-      } catch (error) {
-        console.error(error);
-        setProjects([]);
-      }
-    };
-    fetchData();
-  }, []);
-
   return (
     <div className="flex flex-col mb-60">
       <div className="bg-black/30 w-fit backdrop-blur-md rounded-lg p-6 mx-auto mt-30 mb-30">
