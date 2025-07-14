@@ -15,7 +15,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <section
             id="home"
-            className="min-h-screen flex items-center justify-center pt-2 sm:pt-4 scroll-mt-24"
+            className="min-h-screen flex items-start justify-center pt-4 sm:pt-8 md:pt-12 lg:pt-16 scroll-mt-24"
           >
             <Home />
           </section>

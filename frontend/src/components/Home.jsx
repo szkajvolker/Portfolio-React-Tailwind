@@ -4,7 +4,6 @@ function Home() {
   const [showIndicator, setShowIndicator] = useState(true);
   const [animate, setAnimate] = useState(false);
 
-  // Icon név változóként, hogy a fordító ne érintse
   const arrowIcon = "keyboard_double_arrow_down";
 
   useEffect(() => {
@@ -16,9 +15,9 @@ function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <div className="relative w-full h-full flex flex-col justify-center items-center px-4 py-4 sm:py-8">
+    <div className="relative w-full h-full flex flex-col justify-start items-center px-4 py-4 sm:py-8 md:pt-16">
       <p
-        className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#99ccff] mb-4 sm:mb-8 md:mb-12 text-center ${
+        className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#99ccff] mb-12 sm:mb-8 md:mb-12 text-center mt-8 sm:mt-4 md:mt-8 lg:mt-12 ${
           animate ? "slide-in-left" : "opacity-0"
         }`}
       >
