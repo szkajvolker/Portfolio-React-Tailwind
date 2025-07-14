@@ -4,8 +4,6 @@ function Home() {
   const [showIndicator, setShowIndicator] = useState(true);
   const [animate, setAnimate] = useState(false);
 
-  const arrowIcon = "keyboard_double_arrow_down";
-
   useEffect(() => {
     setAnimate(true);
     function onScroll() {
@@ -51,7 +49,7 @@ function Home() {
               textShadow: "0 0 10px #99ccff, 0 0 20px #99ccff,0 0 30px #99ccff,0 0 40px #99ccff",
             }}
           >
-            {arrowIcon}
+            keyboard_double_arrow_down
           </span>
         </div>
       )}

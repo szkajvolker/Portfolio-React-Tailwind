@@ -29,7 +29,6 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 bg-[#00595f]/90 backdrop-blur-md text-[#99ccff] py-4 px-4 shadow-lg z-50 border-b border-[#99ccff]/20">
       <div className="flex justify-between items-center max-w-4xl mx-auto">
-        {/* Mobile hamburger menu - positioned in header */}
         <div
           onClick={handleMenuClick}
           style={{ display: isMobile ? "flex" : "none" }}
@@ -52,7 +51,6 @@ function Header() {
           ></span>
         </div>
 
-        {/* Desktop navigation - centered in header */}
         {!isMobile && (
           <nav className="flex justify-center items-center gap-8 w-full">
             <a href="#home" onClick={handleNavClick} className={navLink}>
@@ -79,7 +77,6 @@ function Header() {
         )}
       </div>
 
-      {/* Mobile navigation - slides in from left with gap under header */}
       {isMobile && (
         <CSSTransition
           in={menuOpen}
