@@ -13,32 +13,36 @@ function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <div className="relative min-h-screen flex flex-col justify-center px-4 py-8">
+    <div className="relative w-full h-full flex flex-col justify-center items-center px-4 py-4 sm:py-8">
       <p
-        className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#99ccff] mb-4 sm:mb-6 md:mb-8 text-center sm:text-left${
+        className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#99ccff] mb-4 sm:mb-8 md:mb-12 text-center ${
           animate ? "slide-in-left" : "opacity-0"
         }`}
       >
         Welcome to my webpage
       </p>
-      <p
-        className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#99ccff] mb-2 sm:mb-4 text-center sm:text-right ${
-          animate ? "slide-in-right" : "opacity-0"
-        }`}
-      >
-        Szabó István
-      </p>
-      <p
-        className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#99ccff] text-center sm:text-right${
-          animate ? "slide-in-left" : "opacity-0"
-        }`}
-      >
-        Junior Frontend Developer
-      </p>
+
+      <div className="w-full max-w-4xl">
+        <p
+          className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#99ccff] mb-2 sm:mb-4 text-left ${
+            animate ? "slide-in-right" : "opacity-0"
+          }`}
+        >
+          Szabó István
+        </p>
+        <p
+          className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#99ccff] text-right ${
+            animate ? "slide-in-left" : "opacity-0"
+          }`}
+        >
+          Junior Frontend Developer
+        </p>
+      </div>
+
       {showIndicator && (
-        <div className="fixed bottom-8 right-4 sm:right-6 md:right-8 animate bounce">
+        <div className="fixed bottom-8 right-4 sm:right-6 md:right-8 animate-bounce">
           <span
-            className="material-symbol-outlined text-[#01ffff] opacity-80 animate-pulse text-6xl sm:text-7xl md:text-8xl"
+            className="material-symbols-outlined text-[#01ffff] opacity-80 animate-pulse text-6xl sm:text-7xl md:text-8xl"
             style={{
               fontSize: "100px",
               fontVariationSettings: '"FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48',

@@ -54,3 +54,28 @@ body {
 .appear {
   animation: appear 3s;
 }
+
+.slide-nav-enter {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.slide-nav-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 300ms ease-out, opacity 300ms ease-out;
+}
+
+.slide-nav-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-nav-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 300ms ease-in, opacity 300ms ease-in;
+}
+
+.hamburger-line {
+  transform-origin: center;
+}
