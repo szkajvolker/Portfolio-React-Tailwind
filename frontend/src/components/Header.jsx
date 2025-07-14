@@ -27,7 +27,7 @@ function Header() {
     "absolute left-0 bottom-0 h-0.5 w-0 bg-[#99ccff] rounded transition-all duration-300 group-hover:w-full";
 
   return (
-    <header className="sticky top-0 bg-[#00595f]/90 backdrop-blur-md text-[#99ccff] py-4 px-4 shadow-lg z-50 border-b border-[#99ccff]/20">
+    <header className="fixed top-0 left-0 right-0 bg-[#00595f]/90 backdrop-blur-md text-[#99ccff] py-4 px-4 shadow-lg z-50 border-b border-[#99ccff]/20">
       <div className="flex justify-between items-center max-w-4xl mx-auto">
         {/* Mobile hamburger menu - positioned in header */}
         <div
