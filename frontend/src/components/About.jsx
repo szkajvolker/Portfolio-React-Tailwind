@@ -25,7 +25,7 @@ function About() {
         ref={imgRef}
         src={profile2}
         alt="profilepic"
-        className={`w-full max-w-xs sm:max-w-sm md:-max-w-md lg:max-w-xs xl:max-w-sm h-auto object-cover rounded-lg shadow-lg flex-shrink-0 ${
+        className={`w-full max-w-48 sm:max-w-xs md:max-w-sm lg:max-w-xs xl:max-w-sm h-auto object-cover rounded-lg shadow-lg flex-shrink-0 ${
           animate ? "slide-in-left" : "opacity-0"
         }`}
       ></img>

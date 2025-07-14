@@ -6,35 +6,31 @@ html {
 }
 
 body {
-  background: url("/images/background.jpg") no-repeat center center;
+  background: url("/images/background.jpg") no-repeat center;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  /* Plusz scroll optimalizálás */
+
   overflow-x: hidden;
 }
 
-/* Minden elemhez hozzáadjuk a box-sizing-ot */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Mobil fix a background attachment-hez */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
   }
 
-  /* Plusz scroll optimalizálás mobilra */
   * {
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Gyors scroll rés elkerülése */
   html,
   body {
     overscroll-behavior-y: none;
