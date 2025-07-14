@@ -13,32 +13,32 @@ function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <div className="relative mt-10 min-h-[80vh] flex flex-col">
+    <div className="relative min-h-screen flex flex-col justify-center px-4 py-8">
       <p
-        className={`self-start font-anta text-4xl md:text-5xl text-[#99ccff] ml-3 mb-10
-          ${animate ? "slide-in-left" : "opacity-0"}
-        `}
+        className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#99ccff] mb-4 sm:mb-6 md:mb-8 text-center sm:text-left${
+          animate ? "slide-in-left" : "opacity-0"
+        }`}
       >
         Welcome to my webpage
       </p>
       <p
-        className={`text-[#99ccff] font-anta font-bold text-[2.5rem] md:text-[95px] self-end
-          ${animate ? "slide-in-right" : "opacity-0"}
-        `}
+        className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#99ccff] mb-2 sm:mb-4 text-center sm:text-right ${
+          animate ? "slide-in-right" : "opacity-0"
+        }`}
       >
         Szabó István
       </p>
       <p
-        className={`text-[#99ccff] font-anta font-bold text-[2.5rem] md:text-[95px] self-end
-          ${animate ? "slide-in-left" : "opacity-0"}
-        `}
+        className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#99ccff] text-center sm:text-right${
+          animate ? "slide-in-left" : "opacity-0"
+        }`}
       >
         Junior Frontend Developer
       </p>
       {showIndicator && (
-        <div className="fixed right-6 bottom-20 flex justify-end items-end h-20 mt-auto animate-bounce">
+        <div className="fixed bottom-8 right-4 sm:right-6 md:right-8 animate bounce">
           <span
-            className="material-symbols-outlined text-[#01ffff] opacity-80 animate-pulse"
+            className="material-symbol-outlined text-[#01ffff] opacity-80 animate-pulse text-6xl sm:text-7xl md:text-8xl"
             style={{
               fontSize: "100px",
               fontVariationSettings: '"FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48',

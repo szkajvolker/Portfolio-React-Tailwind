@@ -20,18 +20,18 @@ function About() {
   }, []);
 
   return (
-    <div className="flex flex-row items-center justify-between  w-full h-auto mx-auto mt-10 mb-30 gap-30">
+    <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-6 lg:gap-8 xl:gap-12 px-4 py-8">
       <img
         ref={imgRef}
         src={profile2}
         alt="profilepic"
-        className={`w-[80vw] max-w-[300px] h-auto self-start object-cover rounded-[10px_0_10px_0] flex-shrink-0 ${
+        className={`w-full max-w-xs sm:max-w-sm md:-max-w-md lg:max-w-xs xl:max-w-sm h-auto object-cover rounded-lg shadow-lg flex-shrink-0 ${
           animate ? "slide-in-left" : "opacity-0"
         }`}
       ></img>
-      <div className="flex bg-black/30 justify-end w-fit rounded-xl p-10 min-w-[220px] flex-1 backdrop-blur-md">
+      <div className="bg-black/30 backdrop-blur-md rounded-xl p-4 sm:p-6 lg:p-8 w-full lg:flex-1 lg:max-w-2xl">
         <p
-          className={`text-[#99ccff] text-[1.2rem]  leading-9 self-start text-center md:text-left w-full ${
+          className={`text-[#99ccff] sm:text-lg lg:text-xl leading-relaxed text-base text-center lg:text-left${
             animate ? "appear" : ""
           }`}
         >

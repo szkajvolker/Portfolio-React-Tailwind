@@ -11,35 +11,20 @@ function App() {
   return (
     <>
       <Header />
-      <div className="max-w-[1300px] mx-auto px-4 pb-10">
-        <section
-          id="home"
-          className="bg-transparent rounded-xl mb-8 p-10 text-azure scroll-mt-[115px]"
-        >
+      <div>
+        <section id="home">
           <Home />
         </section>
-        <section
-          id="about"
-          className="bg-transparent rounded-xl mb-8 p-10 text-azure scroll-mt-[115px]"
-        >
+        <section id="about">
           <About />
         </section>
-        <section
-          id="skills"
-          className="bg-transparent rounded-xl mb-8 p-10 text-azure scroll-mt-[115px]"
-        >
+        <section id="skills">
           <Skills />
         </section>
-        <section
-          id="projects"
-          className="bg-transparent rounded-xl mb-8 p-10 text-azure scroll-mt-[115px]"
-        >
+        <section id="projects">
           <Projects />
         </section>
-        <section
-          id="contact"
-          className="bg-transparent rounded-xl mb-8 p-10 text-azure scroll-mt-[115px]"
-        >
+        <section id="contact">
           <Contact />
         </section>
       </div>

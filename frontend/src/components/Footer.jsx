@@ -1,33 +1,38 @@
 function Footer() {
   return (
-    <footer className="py-4 bg-transparent backdrop-blur-md text-azure border-t-4 border-cyan-300 mx-8">
-      <div className="flex flex-col md:flex-row justify-between items-center max-w-[1000px] mx-auto px-4 gap-5">
-        <div className="flex flex-col text-left text-md gap-2">
-          <small>
-            BackgroundPicture:{" "}
-            <a
-              className=" text-md font-bold underline hover:text-cyan-300 transition-colors text-[#99ccff]"
-              href="https://www.freepik.com/free-photo/abstract-digital-grid-black-background_13312417.htm#fromView=keyword&page=1&position=33&uuid=8f2e6a78-bd46-43fd-89db-8f6244ac7293&query=Web+Development+Background"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Image by rawpixel.com on Freepik
-            </a>
-          </small>
-          <small>
-            <a
-              href="https://www.flaticon.com/free-icons/email"
-              title="email icons"
-              className="text-md font-bold underline hover:text-cyan-300 transition-colors text-[#99ccff]"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Email icons created by Freepik - Flaticon
-            </a>
-          </small>
-        </div>
-        <div className="text-center font-bold md:text-right flex-1 text-sm text-[#99ccff]">
-          <small>&copy; {new Date().getFullYear()} Szabó István | Author</small>
+    <footer className="bg-black/40 backdrop-blur-md border-t-2 border-[#99ccff]/30 mt-16 py-6 px-4">
+      <div className="max-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-8">
+          <div className="flex flex-col gap-2 text-center lg:text-left">
+            <small className="text-[#99ccff] text-xs sm:text-sm">
+              BackgroundPicture:{" "}
+              <a
+                href="https://www.freepik.com/free-photo/abstract-digital-grid-black-background_13312417.htm#fromView=keyword&page=1&position=33&uuid=8f2e6a78-bd46-43fd-89db-8f6244ac7293&query=Web+Development+Background"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-300 hover:text-cyan-200 underline transition-colors duration-300 font-medium"
+              >
+                Image by rawpixel.com on Freepik
+              </a>
+            </small>
+            <small className="text-[#99ccff] text-xs sm:text-sm">
+              <a
+                href="https://www.flaticon.com/free-icons/email"
+                title="email icons"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-300 hover:text-cyan-200 underline transition-colors duration-300 font-medium"
+              >
+                Email icons created by Freepik - Flaticon
+              </a>
+            </small>
+          </div>
+
+          <div className="text-center lg:text-right">
+            <small className="text-[#99ccff] text-xs sm:text-sm font-semibold">
+              &copy; {new Date().getFullYear()} Szabó István | Author
+            </small>
+          </div>
         </div>
       </div>
     </footer>
