@@ -7,7 +7,7 @@ function Home() {
   useEffect(() => {
     setAnimate(true);
     function onScroll() {
-      setShowIndicator(window.scrollY < 500);
+      setShowIndicator(window.scrollY < 100);
     }
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
