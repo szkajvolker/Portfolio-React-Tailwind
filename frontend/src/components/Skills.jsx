@@ -1,23 +1,45 @@
 import { useState, useRef, useEffect } from "react";
 
 function Skills() {
-  const [animate, setAnimate] = useState(false);
-  const skillsRef = useRef(null);
+  const [animateHard, setAnimateHard] = useState(false);
+  const [animateSoft, setAnimateSoft] = useState(false);
+  const hardSkillsRef = useRef(null);
+  const softSkillsRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const observerHard = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setAnimate(true);
-          observer.disconnect();
+          setAnimateHard(true);
+        } else {
+          setAnimateHard(false);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
+
+    const observerSoft = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimateSoft(true);
+        } else {
+          setAnimateSoft(false);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (hardSkillsRef.current) {
+      observerHard.observe(hardSkillsRef.current);
     }
-    return () => observer.disconnect();
+    if (softSkillsRef.current) {
+      observerSoft.observe(softSkillsRef.current);
+    }
+
+    return () => {
+      observerHard.disconnect();
+      observerSoft.disconnect();
+    };
   }, []);
 
   const icons = {
@@ -36,206 +58,64 @@ function Skills() {
     responsive: "devices",
   };
 
+  const hardSkills = [
+    { id: "html", name: "HTML", percentage: 85 },
+    { id: "css", name: "CSS", percentage: 80 },
+    { id: "javascript", name: "JavaScript", percentage: 90 },
+    { id: "react", name: "React", percentage: 80 },
+    { id: "express", name: "Express.js", percentage: 80 },
+    { id: "node", name: "Node.js", percentage: 85 },
+    { id: "git", name: "Git & GitHub", percentage: 85 },
+    { id: "postman", name: "Postman", percentage: 75 },
+  ];
+
+  const softSkills = [
+    { id: "teamwork", name: "Teamwork", percentage: 92 },
+    { id: "cleanCode", name: "Clean Code", percentage: 87 },
+    { id: "problemSolving", name: "Problem Solving", percentage: 85 },
+    { id: "selfLearning", name: "Self-Learning", percentage: 92 },
+    { id: "responsive", name: "Responsive Design", percentage: 88 },
+  ];
+
+  const renderSkill = (skill, animate) => (
+    <div key={skill.id} className="flex flex-col gap-3">
+      <div className="flex flex-row gap-2">
+        <span className="material-symbols-outlined text-xl">{icons[skill.id]}</span>
+        <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
+          <div
+            className={`h-full bg-[#99ccff] ${
+              animate ? `w-[${skill.percentage}%]` : "w-[0]"
+            } transition-all duration-2000 ease-out`}
+          ></div>
+        </div>
+      </div>
+      <span className="ml-7 text-left">{skill.name}</span>
+    </div>
+  );
+
   return (
-    <div
-      ref={skillsRef}
-      className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 justify-center items-stretch w-full mx-auto px-4 py-8"
-    >
-      <div className="bg-black/30 backdrop-blur-md rounded-xl p-6 md:p-8 flex-1 min-w-0 flex flex-col items-center">
+    <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 justify-center items-stretch w-full mx-auto px-4 py-8">
+      <div
+        ref={hardSkillsRef}
+        className="bg-black/30 backdrop-blur-md rounded-xl p-6 md:p-8 flex-1 min-w-0 flex flex-col items-center"
+      >
         <h2 className="text-[#99ccff] text-xl sm:text-2xl font-bold text-center mb-6">
           Hard skills
         </h2>
         <div className="space-y-4 text-[#99ccff] text-base sm:text-lg transition-colors duration-300 text-center md:text-left grid grid-cols-3 gap-5">
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.html}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[85%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">HTML</span>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.css}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[80%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">CSS</span>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.javascript}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[90%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">JavaScript</span>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.react}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[80%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">React</span>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.express}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[80%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">Express.js</span>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.node}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[85%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">Node.js</span>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.git}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[85%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">Git & GitHub</span>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.postman}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[75%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">Postman</span>
-          </div>
+          {hardSkills.map((skill) => renderSkill(skill, animateHard))}
         </div>
       </div>
 
-      <div className="bg-black/30 backdrop-blur-md rounded-xl p-6 md:p-8 flex-1 min-w-0 flex flex-col items-center">
+      <div
+        ref={softSkillsRef}
+        className="bg-black/30 backdrop-blur-md rounded-xl p-6 md:p-8 flex-1 min-w-0 flex flex-col items-center"
+      >
         <h2 className="text-[#99ccff] text-xl sm:text-2xl font-bold text-center mb-6">
           Soft skills
         </h2>
         <div className="space-y-4 text-[#99ccff] text-base sm:text-lg transition-colors duration-300 text-center md:text-left grid grid-cols-3 gap-5">
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.teamwork}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[92%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">Teamwork</span>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.cleanCode}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[87%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">Clean Code</span>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.problemSolving}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[85%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">Problem Solving</span>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.selfLearning}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[92%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left">Self-Learning</span>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row gap-2">
-              <span className="material-symbols-outlined text-xl">{icons.responsive}</span>
-              <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
-                <div
-                  className={`h-full bg-[#99ccff] ${
-                    animate ? "w-[88%]" : "w-[0]"
-                  } transition-all duration-1000 ease-out`}
-                ></div>
-              </div>
-            </div>
-            <span className="ml-7 text-left text-sm sm:text-base md:text-lg">
-              Responsive Design
-            </span>
-          </div>
+          {softSkills.map((skill) => renderSkill(skill, animateSoft))}
         </div>
       </div>
     </div>
