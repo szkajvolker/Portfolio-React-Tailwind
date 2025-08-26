@@ -60,20 +60,20 @@ function Skills() {
 
   const hardSkills = [
     { id: "html", name: "HTML", percentage: 85 },
-    { id: "css", name: "CSS", percentage: 80 },
+    { id: "css", name: "CSS", percentage: 75 },
     { id: "javascript", name: "JavaScript", percentage: 90 },
     { id: "react", name: "React", percentage: 80 },
-    { id: "express", name: "Express.js", percentage: 80 },
+    { id: "express", name: "Express.js", percentage: 40 },
     { id: "node", name: "Node.js", percentage: 85 },
     { id: "git", name: "Git & GitHub", percentage: 85 },
-    { id: "postman", name: "Postman", percentage: 75 },
+    { id: "postman", name: "Postman", percentage: 65 },
   ];
 
   const softSkills = [
-    { id: "teamwork", name: "Teamwork", percentage: 92 },
+    { id: "teamwork", name: "Teamwork", percentage: 90 },
     { id: "cleanCode", name: "Clean Code", percentage: 87 },
     { id: "problemSolving", name: "Problem Solving", percentage: 85 },
-    { id: "selfLearning", name: "Self-Learning", percentage: 92 },
+    { id: "selfLearning", name: "Self-Learning", percentage: 95 },
     { id: "responsive", name: "Responsive Design", percentage: 88 },
   ];
 
@@ -83,9 +83,8 @@ function Skills() {
         <span className="material-symbols-outlined text-xl">{icons[skill.id]}</span>
         <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
           <div
-            className={`h-full bg-[#99ccff] ${
-              animate ? `w-[${skill.percentage}%]` : "w-[0]"
-            } transition-all duration-2000 ease-out`}
+            className="h-full bg-[#99ccff] transition-all duration-2000 ease-out"
+            style={{ width: animate ? `${skill.percentage}% ` : "0%" }}
           ></div>
         </div>
       </div>
