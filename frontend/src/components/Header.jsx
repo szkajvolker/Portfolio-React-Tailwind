@@ -1,5 +1,7 @@
 import { useState, useLayoutEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
+import { navLinks } from "../data/constants";
+
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -53,26 +55,19 @@ function Header() {
 
         {!isMobile && (
           <nav className="flex justify-center items-center gap-8 w-full">
-            <a href="#home" onClick={handleNavClick} className={navLink}>
-              <span className="material-symbols-outlined text-xl">home</span>
-              Home <span className={navUnderline}></span>
-            </a>
-            <a href="#about" onClick={handleNavClick} className={navLink}>
-              <span className="material-symbols-outlined text-xl">emoji_people</span>
-              About <span className={navUnderline}></span>
-            </a>
-            <a href="#skills" onClick={handleNavClick} className={navLink}>
-              <span className="material-symbols-outlined text-xl">person_play</span>
-              Skills <span className={navUnderline}></span>
-            </a>
-            <a href="#projects" onClick={handleNavClick} className={navLink}>
-              <span className="material-symbols-outlined text-xl">build</span>
-              Projects <span className={navUnderline}></span>
-            </a>
-            <a href="#contact" onClick={handleNavClick} className={navLink}>
-              <span className="material-symbols-outlined text-xl">mail</span>
-              Contact <span className={navUnderline}></span>
-            </a>
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                onClick={handleNavClick}
+                className={navLink}
+              >
+                <span className="material-symbols-outlined text-xl">
+                  {link.icon}
+                </span>
+                {link.name} <span className={navUnderline}></span>
+              </a>
+            ))}
           </nav>
         )}
       </div>
@@ -89,46 +84,19 @@ function Header() {
             ref={mobileNavRef}
             className="fixed top-20 left-0 w-64 h-fit bg-[#00595f]/95 backdrop-blur-md flex flex-col justify-start items-start pt-8 pl-6 z-40 shadow-2xl border-r border-[#99ccff]/20"
           >
-            <a
-              href="#home"
-              onClick={handleNavClick}
-              className="flex items-center gap-3 text-white no-underline text-lg py-4 px-4 rounded-lg transition-all duration-300 hover:text-[#99ccff] hover:bg-white/10 w-full"
-            >
-              <span className="material-symbols-outlined text-2xl">home</span>
-              Home
-            </a>
-            <a
-              href="#about"
-              onClick={handleNavClick}
-              className="flex items-center gap-3 text-white no-underline text-lg py-4 px-4 rounded-lg transition-all duration-300 hover:text-[#99ccff] hover:bg-white/10 w-full"
-            >
-              <span className="material-symbols-outlined text-2xl">emoji_people</span>
-              About
-            </a>
-            <a
-              href="#skills"
-              onClick={handleNavClick}
-              className="flex items-center gap-3 text-white no-underline text-lg py-4 px-4 rounded-lg transition-all duration-300 hover:text-[#99ccff] hover:bg-white/10 w-full"
-            >
-              <span className="material-symbols-outlined text-2xl">person_play</span>
-              Skills
-            </a>
-            <a
-              href="#projects"
-              onClick={handleNavClick}
-              className="flex items-center gap-3 text-white no-underline text-lg py-4 px-4 rounded-lg transition-all duration-300 hover:text-[#99ccff] hover:bg-white/10 w-full"
-            >
-              <span className="material-symbols-outlined text-2xl">build</span>
-              Projects
-            </a>
-            <a
-              href="#contact"
-              onClick={handleNavClick}
-              className="flex items-center gap-3 text-white no-underline text-lg py-4 px-4 rounded-lg transition-all duration-300 hover:text-[#99ccff] hover:bg-white/10 w-full"
-            >
-              <span className="material-symbols-outlined text-2xl">mail</span>
-              Contact
-            </a>
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                onClick={handleNavClick}
+                className="flex items-center gap-3 text-white no-underline text-lg py-4 px-4 rounded-lg transition-all duration-300 hover:text-[#99ccff] hover:bg-white/10 w-full"
+              >
+                <span className="material-symbols-outlined text-2xl">
+                  {link.icon}
+                </span>
+                {link.name}
+              </a>
+            ))}
           </nav>
         </CSSTransition>
       )}

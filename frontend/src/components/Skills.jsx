@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { icons, softSkills, hardSkills } from "../data/constants";
 
 function Skills() {
   const [animateHard, setAnimateHard] = useState(false);
@@ -42,45 +43,12 @@ function Skills() {
     };
   }, []);
 
-  const icons = {
-    html: "code",
-    css: "palette",
-    javascript: "javascript",
-    react: "science",
-    express: "cloud",
-    node: "developer_mode",
-    git: "source",
-    postman: "api",
-    teamwork: "group",
-    cleanCode: "auto_fix_high",
-    problemSolving: "psychology",
-    selfLearning: "school",
-    responsive: "devices",
-  };
-
-  const hardSkills = [
-    { id: "html", name: "HTML", percentage: 85 },
-    { id: "css", name: "CSS", percentage: 75 },
-    { id: "javascript", name: "JavaScript", percentage: 90 },
-    { id: "react", name: "React", percentage: 80 },
-    { id: "express", name: "Express.js", percentage: 40 },
-    { id: "node", name: "Node.js", percentage: 85 },
-    { id: "git", name: "Git & GitHub", percentage: 85 },
-    { id: "postman", name: "Postman", percentage: 65 },
-  ];
-
-  const softSkills = [
-    { id: "teamwork", name: "Teamwork", percentage: 90 },
-    { id: "cleanCode", name: "Clean Code", percentage: 87 },
-    { id: "problemSolving", name: "Problem Solving", percentage: 85 },
-    { id: "selfLearning", name: "Self-Learning", percentage: 95 },
-    { id: "responsive", name: "Responsive Design", percentage: 88 },
-  ];
-
   const renderSkill = (skill, animate) => (
     <div key={skill.id} className="flex flex-col gap-3">
       <div className="flex flex-row gap-2">
-        <span className="material-symbols-outlined text-xl">{icons[skill.id]}</span>
+        <span className="material-symbols-outlined text-xl">
+          {icons[skill.id]}
+        </span>
         <div className="border-2 border-[#99ccff] w-full h-5 rounded-lg overflow-hidden bg-black/20">
           <div
             className="h-full bg-[#99ccff] transition-all duration-2000 ease-out"
